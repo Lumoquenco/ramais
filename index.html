@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa de Ramais</title>
+</head>
+<body>
+    <h1>Pesquisa de Ramais</h1>
+    <form>
+        <label for="local">Local:</label>
+        <select id="local" name="local" onchange="atualizarSetores()">
+            <option value="">Selecione</option>
+        </select>
+        <br>
+        <br>
+        <label for="setor">Setor:</label>
+        <select id="setor" name="setor" onchange="atualizarNomes()">
+            <option value="">Selecione</option>
+        </select>
+        <br>
+        <br>
+        <label for="nome">Nome:</label>
+        <select id="nome" name="nome" onchange="mostrarRamal()">
+            <option value="">Selecione</option>
+        </select>
+        <br>
+        <br>
+        <input type="text" id="ramal" name="ramal" placeholder="Ramal" readonly>
+    </form>
+
+    <script>
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwbv8kM36vaYT7Cebt6K2VYzShR2thQjmCiILvEYzKv6_KDhXiNSf6HjYrsQkRdsQ2xHA/exec'; // Substitua pela URL correta
+        let dados = {};
+
+        function carregarDados() {
+            fetch(WEB_APP_URL)
+                .then(response => response.json())
+                .then(data => {
+                    dados = data;
+                    const localSelect = document.getElementById('local');
+                    Object.keys(dados).forEach(local => {
+                        const option = document.createElement('option');
+                        option.value = local;
+                        option.textContent = local;
+                        localSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Erro ao carregar dados:', error));
+        }
+
+        function atualizarSetores() {
+            const local = document.getElementById('local').value;
+            const setorSelect = document.getElementById('setor');
+            setorSelect.innerHTML = '<option value="">Selecione</option>';
+
+            if (local && dados[local]) {
+                Object.keys(dados[local]).forEach(setor => {
+                    const option = document.createElement('option');
+                    option.value = setor;
+                    option.textContent = setor;
+                    setorSelect.appendChild(option);
+                });
+            }
+        }
+
+        function atualizarNomes() {
+            const local = document.getElementById('local').value;
+            const setor = document.getElementById('setor').value;
+            const nomeSelect = document.getElementById('nome');
+            nomeSelect.innerHTML = '<option value="">Selecione</option>';
+
+            if (local && setor && dados[local][setor]) {
+                Object.keys(dados[local][setor]).forEach(nome => {
+                    const option = document.createElement('option');
+                    option.value = nome;
+                    option.textContent = nome;
+                    nomeSelect.appendChild(option);
+                });
+            }
+        }
+
+        function mostrarRamal() {
+            const local = document.getElementById('local').value;
+            const setor = document.getElementById('setor').value;
+            const nome = document.getElementById('nome').value;
+            const ramalInput = document.getElementById('ramal');
+
+            if (local && setor && nome && dados[local][setor][nome]) {
+                ramalInput.value = dados[local][setor][nome];
+            } else {
+                ramalInput.value = '';
+            }
+        }
+
+        window.onload = carregarDados;
+    </script>
+</body>
+</html>
