@@ -11,21 +11,21 @@
         <select id="local" name="local" onchange="atualizarSetores()">
             <option value="">Selecione</option>
         </select>
-        <br>
-        <br>
+        <br><br>
         <label for="setor">Setor:</label>
         <select id="setor" name="setor" onchange="atualizarNomes()">
             <option value="">Selecione</option>
         </select>
-        <br>
-        <br>
+        <br><br>
         <label for="nome">Nome:</label>
         <select id="nome" name="nome" onchange="mostrarRamal()">
             <option value="">Selecione</option>
         </select>
-        <br>
-        <br>
+        <br><br>
         <input type="text" id="ramal" name="ramal" placeholder="Ramal" readonly>
+        <br><br>
+        <button type="button" onclick="limparPesquisa()">Limpar Pesquisa</button>
+        <button type="button" onclick="mostrarTodos()">Mostrar Todos</button>
     </form>
 
     <script>
@@ -89,6 +89,38 @@
                 ramalInput.value = dados[local][setor][nome];
             } else {
                 ramalInput.value = '';
+            }
+        }
+
+        function limparPesquisa() {
+            document.getElementById('local').selectedIndex = 0;
+            document.getElementById('setor').innerHTML = '<option value="">Selecione</option>';
+            document.getElementById('nome').innerHTML = '<option value="">Selecione</option>';
+            document.getElementById('ramal').value = '';
+        }
+
+        function mostrarTodos() {
+            const local = document.getElementById('local').value;
+            const setor = document.getElementById('setor').value;
+            const nomeSelect = document.getElementById('nome');
+            nomeSelect.innerHTML = '<option value="">Selecione</option>';
+
+            if (local && setor) {
+                Object.keys(dados[local][setor]).forEach(nome => {
+                    const option = document.createElement('option');
+                    option.value = nome;
+                    option.textContent = nome;
+                    nomeSelect.appendChild(option);
+                });
+            } else if (local) {
+                Object.keys(dados[local]).forEach(setor => {
+                    Object.keys(dados[local][setor]).forEach(nome => {
+                        const option = document.createElement('option');
+                        option.value = nome;
+                        option.textContent = nome;
+                        nomeSelect.appendChild(option);
+                    });
+                });
             }
         }
 
