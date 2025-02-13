@@ -106,6 +106,7 @@
             nomeSelect.innerHTML = '<option value="">Selecione</option>';
 
             if (local && setor) {
+                // Mostrar todos os nomes do setor
                 Object.keys(dados[local][setor]).forEach(nome => {
                     const option = document.createElement('option');
                     option.value = nome;
@@ -113,6 +114,7 @@
                     nomeSelect.appendChild(option);
                 });
             } else if (local) {
+                // Mostrar todos os nomes do local
                 Object.keys(dados[local]).forEach(setor => {
                     Object.keys(dados[local][setor]).forEach(nome => {
                         const option = document.createElement('option');
