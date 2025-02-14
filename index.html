@@ -26,7 +26,7 @@
         <input type="text" id="ramal" name="ramal" placeholder="Ramal" readonly>
         <br><div>
         <button type="button" onclick="limparPesquisa()">Limpar Pesquisa</button>
-        <button type="button" onclick="mostrarTodos()">Mostrar Todos</button>
+        
     </div>
 
     <script>
@@ -99,32 +99,7 @@
             document.getElementById('nome').innerHTML = '<option value="">Selecione</option>';
             document.getElementById('ramal').value = '';
         }
-
-        function mostrarTodos() {
-            const local = document.getElementById('local').value;
-            const setor = document.getElementById('setor').value;
-            const nomeSelect = document.getElementById('nome');
-            nomeSelect.innerHTML = '<option value="">Selecione</option>';
-
-            if (local && setor) {
-                Object.keys(dados[local][setor]).forEach(nome => {
-                    const option = document.createElement('option');
-                    option.value = nome;
-                    option.textContent = nome;
-                    nomeSelect.appendChild(option);
-                });
-            } else if (local) {
-                Object.keys(dados[local]).forEach(setor => {
-                    Object.keys(dados[local][setor]).forEach(nome => {
-                        const option = document.createElement('option');
-                        option.value = nome;
-                        option.textContent = nome;
-                        nomeSelect.appendChild(option);
-                    });
-                });
-            }
-        }
-
+        
         window.onload = carregarDados;
     </script>
 </body>
