@@ -1,7 +1,6 @@
 body{
   background-color: #f7f7f7;  
 }
-
 .form-container {
     box-sizing: border-box;
     width: 100%;
@@ -10,6 +9,13 @@ body{
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: white;
+    background-color: f7f7f7;
     object-position: center;
 } 
+.form-container input {
+	font-size: 10px;
+	width: 26px;
+}
+.form-container select {
+	font-size: 10px;
+}
