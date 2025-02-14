@@ -13,12 +13,17 @@ body{
     object-position: center;
 } 
 .form-container input {
-	font-size: 10px;
-	width: 26px;
+	font-size: 14px;
+	width: 40px;
     border-radius: 8px;
 }
 .form-container select {
-	font-size: 10px;
+	font-size: 14px;
     border-radius: 8px;
-
+    width: 40px;
+}
+.form-container label {
+	font-size: 14px;
+    border-radius: 8px;
+    width: 40px;
 }
