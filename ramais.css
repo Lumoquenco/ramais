@@ -4,19 +4,13 @@ body{
 .form-container {
     box-sizing: border-box;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: whitesmoke;
     object-position: center;
-} 
-.form-container input {
-	font-size: 14px;
-	width: 140px;
-    border-radius: 8px;
-    margin-left: 30px;
 }
 .form-container select {
 	font-size: 14px;
@@ -30,5 +24,6 @@ body{
     width: 140px;
 }
 #ramal {
-    width: 240px;
+    width: 60px;
+    align-items: center;
 }
