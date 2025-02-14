@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Pesquisa de Ramais</title>
+    <style>
+       .form-container {
+           box-sizing: border-box;
+           width: 100%;
+           max-width: 1000px;
+           margin: auto;
+           padding: 20px;
+           border: 1px solid #ccc;
+           border-radius: 8px;
+           background-color: white;
+       } 
+    </style>
 </head>
 <body>
     <h1>Pesquisa de Ramais</h1>
-    <form>
+      <div class="form-container">
         <label for="local">Local:</label>
         <select id="local" name="local" onchange="atualizarSetores()">
             <option value="">Selecione</option>
@@ -26,7 +38,7 @@
         <br><br>
         <button type="button" onclick="limparPesquisa()">Limpar Pesquisa</button>
         <button type="button" onclick="mostrarTodos()">Mostrar Todos</button>
-    </form>
+    </div>
 
     <script>
         const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwbv8kM36vaYT7Cebt6K2VYzShR2thQjmCiILvEYzKv6_KDhXiNSf6HjYrsQkRdsQ2xHA/exec'; // Substitua pela URL correta
