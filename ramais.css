@@ -14,13 +14,13 @@ body{
 } 
 .form-container input {
 	font-size: 14px;
-	width: 40px;
+	width: 140px;
     border-radius: 8px;
 }
 .form-container select {
 	font-size: 14px;
     border-radius: 8px;
-    width: 40px;
+    width: 140px;
 }
 .form-container label {
 	font-size: 14px;
