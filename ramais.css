@@ -1,5 +1,5 @@
 body{
-  background-color: #f7f7f7;  
+  background-color: #ccc;  
 }
 .form-container {
     box-sizing: border-box;
@@ -15,7 +15,10 @@ body{
 .form-container input {
 	font-size: 10px;
 	width: 26px;
+    border-radius: 8px;
 }
 .form-container select {
 	font-size: 10px;
+    border-radius: 8px;
+
 }
