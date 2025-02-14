@@ -16,13 +16,13 @@ body{
 	font-size: 14px;
 	width: 140px;
     border-radius: 8px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 .form-container select {
 	font-size: 14px;
     border-radius: 8px;
     width: 140px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 .form-container label {
 	font-size: 14px;
