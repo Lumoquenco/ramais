@@ -3,22 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Pesquisa de Ramais</title>
-    <style>
-       .form-container {
-           box-sizing: border-box;
-           width: 100%;
-           max-width: 1000px;
-           margin: auto;
-           padding: 20px;
-           border: 1px solid #ccc;
-           border-radius: 8px;
-           background-color: white;
-       } 
-    </style>
+    <link rel="stylesheet" href="ramais.css">
 </head>
 <body>
     <h1>Pesquisa de Ramais</h1>
-      <div class="form-container">
+    <div class="form-container">
         <label for="local">Local:</label>
         <select id="local" name="local" onchange="atualizarSetores()">
             <option value="">Selecione</option>
@@ -35,7 +24,7 @@
         </select>
         <br><br>
         <input type="text" id="ramal" name="ramal" placeholder="Ramal" readonly>
-        <br><br>
+        <br><div>
         <button type="button" onclick="limparPesquisa()">Limpar Pesquisa</button>
         <button type="button" onclick="mostrarTodos()">Mostrar Todos</button>
     </div>
@@ -118,7 +107,6 @@
             nomeSelect.innerHTML = '<option value="">Selecione</option>';
 
             if (local && setor) {
-                // Mostrar todos os nomes do setor
                 Object.keys(dados[local][setor]).forEach(nome => {
                     const option = document.createElement('option');
                     option.value = nome;
@@ -126,7 +114,6 @@
                     nomeSelect.appendChild(option);
                 });
             } else if (local) {
-                // Mostrar todos os nomes do local
                 Object.keys(dados[local]).forEach(setor => {
                     Object.keys(dados[local][setor]).forEach(nome => {
                         const option = document.createElement('option');
