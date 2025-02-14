@@ -4,7 +4,7 @@ body{
 .form-container {
     box-sizing: border-box;
     width: 100%;
-    max-width: 800px;
+    max-width: 300px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -28,4 +28,7 @@ body{
 	font-size: 14px;
     border-radius: 8px;
     width: 140px;
+}
+#ramal {
+    width: 240px;
 }
