@@ -9,7 +9,7 @@ body{
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: f7f7f7;
+    background-color: whitesmoke;
     object-position: center;
 } 
 .form-container input {
@@ -25,5 +25,5 @@ body{
 .form-container label {
 	font-size: 14px;
     border-radius: 8px;
-    width: 40px;
+    width: 140px;
 }
