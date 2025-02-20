@@ -16,9 +16,15 @@ body{
     font-size: 14px;
     border-radius: 8px;
     width: 140px;
-    margin-left: 20px;
+   
 }
 #nome {
+    margin-left: 20px;
+}
+#setor {
+    margin-left: 20px;
+}
+#local {
     margin-left: 20px;
 }
 .form-container label {
