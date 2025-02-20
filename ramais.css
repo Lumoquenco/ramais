@@ -13,19 +13,23 @@ body{
     object-position: center;
 }
 .form-container select {
-	font-size: 14px;
+    font-size: 14px;
     border-radius: 8px;
     width: 140px;
     margin-left: 30px;
 }
+#nome {
+    margin-left: 20px;
+}
 .form-container label {
-	font-size: 14px;
+    font-size: 14px;
     border-radius: 8px;
     width: 140px;
 }
 #ramal {
-    width: 60px;
-    align-items: center;
+    width: 160px;
+    margin-left: 20px;
+    
     margin-left: -30px;
 }
 h1 {
